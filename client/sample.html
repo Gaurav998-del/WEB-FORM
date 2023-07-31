@@ -1,0 +1,36 @@
+<div>
+    <Navbar bg="primary" data-bs-theme="dark">
+      <Container>
+        <Navbar.Brand href="/">WEB-FORM</Navbar.Brand>
+        <Nav className="me-auto">
+          <Nav.Link href="/home">Home</Nav.Link>
+          <Nav.Link href="/about">About</Nav.Link>
+          <Nav.Link href="/head-tail">Head & Tail</Nav.Link>
+        </Nav>
+      </Container>
+    </Navbar>
+    <form onSubmit={handleSubmit}>
+      <select value={selectedValue} onChange={handleChange}>
+        <option value="">Select value</option>
+        <option value="H">H</option>
+        <option value="T">T</option>
+      </select>
+      <button type="submit">Add</button>
+      <button type="button" onClick={handleReset}>Reset</button>
+    </form>
+
+    {validationMessage && <p>{validationMessage}</p>}
+
+    <div>
+      <div>
+        {chars['H'].map((char, index) => (
+          <span key={`H-${index}`}>{char} </span>
+        ))}
+      </div>
+      <div>
+        {chars['T'].map((char, index) => (
+          <span key={`T-${index}`}>{char} </span>
+        ))}
+      </div>
+    </div>
+  </div>
